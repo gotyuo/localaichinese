@@ -1,0 +1,19 @@
+name: deepseek-r1-8b
+backend: llama-cpp
+parameters:
+  model: deepseek-coder-6.7b-instruct.Q5_K_M.gguf
+  temperature: 0.7
+  top_p: 0.9
+  max_tokens: 2048
+  repeat_penalty: 1.1
+  n_ctx: 4096
+  n_batch: 512
+context_size: 4096
+template:
+  chat_message: "{{.Role}}\n{{.Content}}"
+  completion: "{{.Prompt}}"
+  function: "{{.Prompt}}"
+  tools: "{{.Prompt}}"
+
+# For OpenAI compatibility
+f16: true
